@@ -22043,11 +22043,11 @@ Function Build-MyFCGScriptConfig ()
   [Void]$StringBuilder.AppendLine("  [MyConfig]::Colors = [Colors]::New(")
   [Void]$StringBuilder.AppendLine("    [System.Drawing.Color]::FromArgb(48, 48, 48), # Back")
   [Void]$StringBuilder.AppendLine("    [System.Drawing.Color]::DodgerBlue, # Fore [System.Drawing.Color]::LightCoral")
-  [Void]$StringBuilder.AppendLine("    [System.Drawing.Color]::WhiteSmoke, # LabelForr")
-  [Void]$StringBuilder.AppendLine("    [System.Drawing.Color]::Red, # ErrorFoer")
+  [Void]$StringBuilder.AppendLine("    [System.Drawing.Color]::WhiteSmoke, # LabelFore")
+  [Void]$StringBuilder.AppendLine("    [System.Drawing.Color]::Red, # ErrorFore")
   [Void]$StringBuilder.AppendLine("    [System.Drawing.Color]::DarkGray, # TitleBack")
   [Void]$StringBuilder.AppendLine("    [System.Drawing.Color]::DimGray, # TitleFore")
-  [Void]$StringBuilder.AppendLine("    [System.Drawing.Color]::WhiteSmoke, # GroupFore")
+  [Void]$StringBuilder.AppendLine("    [System.Drawing.Color]::DodgerBlue, # GroupFore")
   [Void]$StringBuilder.AppendLine("    [System.Drawing.Color]::Gainsboro, # TextBack")
   [Void]$StringBuilder.AppendLine("    [System.Drawing.Color]::DarkGray, # TextROBack")
   [Void]$StringBuilder.AppendLine("    [System.Drawing.Color]::Black, #TextFore")
@@ -52860,8 +52860,8 @@ Function Build-MyScriptEvent ()
           "DrawColumnHeader"
           {
             [Void]$StringBuilder.AppendLine("  `$EventArg.Graphics.FillRectangle(([System.Drawing.SolidBrush]::New([MyConfig]::Colors.TitleBack)), `$EventArg.Bounds)")
-            [Void]$StringBuilder.AppendLine("  `$EventArg.Graphics.DrawRectangle(([System.Drawing.Pen]::New([MyConfig]::Colors.TitleFore)), `$EventArg.Bounds.X, `$EventArg.Bounds.Y, `$EventArg.Bounds.Width, (`$EventArg.Bounds.Height - 1))")
-            [Void]$StringBuilder.AppendLine("  `$EventArg.Graphics.DrawString(`$EventArg.Header.Text, `$Sender.Font, ([System.Drawing.SolidBrush]::New([MyConfig]::Colors.TitleFore)), (`$EventArg.Bounds.X + [MyConfig]::FormSpacer), (`$EventArg.Bounds.Y + ((`$EventArg.Bounds.Height - [MyConfig]::Font.Height) / 1)))")
+            [Void]$StringBuilder.AppendLine("  `$EventArg.Graphics.DrawRectangle(([System.Drawing.Pen]::New([MyConfig]::Colors.TextFore)), `$EventArg.Bounds.X, `$EventArg.Bounds.Y, `$EventArg.Bounds.Width, (`$EventArg.Bounds.Height - 1))")
+            [Void]$StringBuilder.AppendLine("  `$EventArg.Graphics.DrawString(`$EventArg.Header.Text, `$Sender.Font, ([System.Drawing.SolidBrush]::New([MyConfig]::Colors.TextFore)), (`$EventArg.Bounds.X + [MyConfig]::FormSpacer), (`$EventArg.Bounds.Y + ((`$EventArg.Bounds.Height - [MyConfig]::Font.Height) / 1)))")
             Break
           }
           "Resize"
